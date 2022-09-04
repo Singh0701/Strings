@@ -39,14 +39,6 @@ public class Solution {
         
         return max(n - 1, m - 1, s1, s2, dp);
     }
-    public static int max(int ptr1, int ptr2, String s1, String s2, int[][] dp) {
-        //Base case
-        if(ptr1 < 0 || ptr2 < 0) return 0;
-        if(dp[ptr1][ptr2] != -1) return dp[ptr1][ptr2];
-        if(s1.charAt(ptr1) == s2.charAt(ptr2)) 
-            return dp[ptr1][ptr2] = 1 + max(ptr1 - 1, ptr2 - 1, s1, s2, dp);
-        else return dp[ptr1][ptr2] = Math.max(max(ptr1 - 1, ptr2, s1, s2, dp), max(ptr1, ptr2 - 1, s1, s2, dp));
-    }
 }
 
 
@@ -70,14 +62,6 @@ public class Solution {
             }
         }
         return dp[n][m];
-    }
-    public static int max(int ptr1, int ptr2, String s1, String s2, int[][] dp) {
-        //Base case
-        if(ptr1 < 0 || ptr2 < 0) return 0;
-        if(dp[ptr1][ptr2] != -1) return dp[ptr1][ptr2];
-        if(s1.charAt(ptr1) == s2.charAt(ptr2)) 
-            return dp[ptr1][ptr2] = 1 + max(ptr1 - 1, ptr2 - 1, s1, s2, dp);
-        else return dp[ptr1][ptr2] = Math.max(max(ptr1 - 1, ptr2, s1, s2, dp), max(ptr1, ptr2 - 1, s1, s2, dp));
     }
 }
 
@@ -104,13 +88,5 @@ public class Solution {
             prev = curr;
         }
         return prev[m];
-    }
-    public static int max(int ptr1, int ptr2, String s1, String s2, int[][] dp) {
-        //Base case
-        if(ptr1 < 0 || ptr2 < 0) return 0;
-        if(dp[ptr1][ptr2] != -1) return dp[ptr1][ptr2];
-        if(s1.charAt(ptr1) == s2.charAt(ptr2)) 
-            return dp[ptr1][ptr2] = 1 + max(ptr1 - 1, ptr2 - 1, s1, s2, dp);
-        else return dp[ptr1][ptr2] = Math.max(max(ptr1 - 1, ptr2, s1, s2, dp), max(ptr1, ptr2 - 1, s1, s2, dp));
     }
 }
